@@ -224,3 +224,351 @@ house.windows = 11;
 console.log(house);
 
 물론, 이러한 방법들을 조합하여 JavaScript에서 객체를 만들고 조작하는 다양한 방법을 활용할 수 있다.
+
+------------------------------------------------------------------------------------------------------------------------
+
+7. 객체 리터럴과 대괄호 표기법
+
+객체 리터럴과 대괄호 표기법
+
+var house2 = {};
+house2[ “방” ] = 4;
+house2[ ‘color’ ] = “분홍색” ;
+house2[ “가격USD” ] = 12345 ;
+console.log(house2); // { 객실: 4, 색상 : ‘핑크’, 가격USD: 12345 }
+
+예제와 같이 점 표기법이나 대괄호 표기법 또는 둘의 조합을 사용하여 객체의 속성에 액세스하고 업데이트할 수 있습니다.
+
+var car = {};
+car.color = "red";
+car["color"] = "green";
+car["speed"] = 200;
+car.speed = 100;
+console.log(car); // {color: "green", speed: 100}
+이와 같이 빈 대괄호를 변수지정하고 집어넣는 느낌
+var arrOfKeys = ['speed', 'altitude', 'color'];
+var drone = {
+    speed: 100,
+    altitude: 200,
+    color: "red"
+}
+for (var i = 0; i < arrOfKeys.length; i++) {
+    console.log(drone[arrOfKeys[i]])
+}
+
+output
+
+100
+200
+red
+
+for문을 통해 0, 1, 2로 각 배열 인덱스의 값에 접근
+
+이를 통해 드론 객체 내의 각 속성 키를 기반으로 각 값에 대한 루프를 실행할 수 있었습니다.
+
+자바스크립트에서 배열은 객체입니다. 즉, 배열에는 몇 가지 내장 속성과 메서드가 있습니다.
+
+배열에서 가장 자주 사용되는 내장 메서드 중 하나는 push()와 pop() 메서드입니다.
+
+배열에 새 항목을 추가하려면 push() 메서드를 사용할 수 있습니다. 예를 들어, var fruits = [];로 배열을 초기화한 후 fruits.push("apple");을 호출하면 배열은 ['apple']이 됩니다. 그리고 fruits.push('pear');을 호출하면 배열은 ['apple', 'pear']이 됩니다. 반면에, 배열에서 마지막 항목을 제거하려면 pop() 메서드를 사용할 수 있습니다. fruits.pop();를 호출하고 console.log(fruits);를 통해 확인하면 ['apple']이 출력됩니다.
+
+모든 인수를 배열로 푸시하는 함수를 구축할 수도 있습니다. 예를 들어, 다음과 같이 arrayBuilder() 함수를 만들 수 있습니다:
+
+function arrayBuilder(one, two, three) {
+    var arr = [];
+    arr.push(one);
+    arr.push(two);
+    arr.push(three);
+    console.log(arr);
+}
+
+이제 arrayBuilder() 함수를 호출할 수 있습니다. 예를 들어, arrayBuilder('apple', 'banana', 'cherry');와 같이 호출할 수 있습니다.
+
+하지만 더 좋은 방법은 새로 만들어진 배열을 콘솔 로그로 바로 출력하는 것이 아니라 반환하는 것입니다. 예를 들어, 다음과 같이 함수를 수정할 수 있습니다:
+
+function arrayBuilder(one, two, three) {
+    var arr = [];
+    arr.push(one);
+    arr.push(two);
+    arr.push(three);
+    return arr;
+}
+
+이 함수 호출을 변수에 저장할 수도 있습니다. 이름은 아무거나 지정할 수 있지만, 이번에는 simpleArr이라는 이름을 사용해보겠습니다. var simpleArr = arrayBuilder('apple', 'pear', 'plum');을 선언하고 console.log(simpleArr);를 통해 simpleArr에 저장된 값을 확인하면 ['apple', 'pear', 'plum']이 출력됩니다.
+
+------------------------------------------------------------------------------------------------------------------------
+
+8. 내장 객체, 메서드
+
+Math 객체에는 다음과 같은 내장 숫자 상수가 있습니다:
+
+파이(PI) 값: Math.PI는 대략 3.14159입니다.
+오일러 상수(Euler's constant): Math.E는 대략 2.718입니다.
+2의 자연로그: Math.LN2는 대략 0.693입니다.
+반올림 메서드
+
+다음과 같은 메서드들이 있습니다:
+
+Math.ceil() - 가장 가까운 정수로 올림합니다.
+Math.floor() - 가장 가까운 정수로 내림합니다.
+Math.round() - 소수점이 .5 이상이면 가장 가까운 정수로 올림, 그렇지 않으면 내림합니다.
+Math.trunc() - 소수점을 제거하고 정수만 남깁니다.
+산술 및 계산 메서드
+
+Math 객체에는 다음과 같은 일부 산술 및 계산 메서드가 있습니다:
+
+Math.pow(2,3) - 2의 3승을 계산합니다. 결과는 8입니다.
+Math.sqrt(16) - 16의 제곱근을 계산합니다. 결과는 4입니다.
+Math.cbrt(8) - 8의 세제곱근을 찾습니다. 결과는 2입니다.
+Math.abs(-10) - 절대값을 반환합니다. 결과는 10입니다.
+로그 메서드: Math.log(), Math.log2(), Math.log10()
+입력된 값 중 최소값과 최대값을 반환: Math.min(9,8,7)은 7을, Math.max(9,8,7)은 9를 반환합니다.
+삼각 함수 메서드
+
+Math.sin(), Math.cos(), Math.tan() 등의 삼각 함수 메서드가 있습니다.
+
+내장 메서드 중 하나인 random 메서드를 사용할 때 정말 유용합니다.
+
+이 설명은 JavaScript에서 Math 객체의 random 및 ceil 메서드를 사용하는 방법에 대한 가이드입니다. Math.random() 메서드는 0(포함)과 1(제외) 사이의 무작위 소수를 생성합니다. 생성된 소수는 decimal 변수에 저장됩니다. 이 소수를 10배 증가시켜 더 큰 범위의 소수를 얻을 수 있으며, 이를 통해 0부터 9까지의 무작위 소수를 생성할 수 있습니다. Math.ceil() 메서드는 주어진 숫자를 올림하여 가장 가까운 정수로 반환합니다. 이 메서드를 사용하여 decimal 변수에 저장된 무작위 소수를 올림하여 정수로 변환할 수 있습니다. 이렇게 하면 0부터 10 사이의 무작위 정수를 생성할 수 있습니다. 간단한 코드 예시는 다음과 같습니다:
+
+// 0과 1 사이의 무작위 소수 생성
+var decimal = Math.random();
+
+// 생성된 소수를 10배 증가시킴
+decimal = decimal * 10;
+
+// 소수를 올려 가장 가까운 정수로 만듬
+var rounded = Math.ceil(decimal);
+
+// 결과 출력
+console.log("무작위 소수: ", decimal);
+console.log("0부터 10 사이의 무작위 정수: ", rounded);
+
+때로 개발자들이 iterable(반복 가능한)에 대한 이야기를 한다.
+
+JavaScript에서 'iterable(반복 가능한)'은 for...of 루프를 사용하여 반복할 수 있는 모든 데이터 유형을 의미합니다. 배열과 문자열은 이러한 데이터 유형의 예입니다. 문자열은 배열처럼 동작할 수 있으며, for 루프를 사용하여 각 문자를 순회할 수 있습니다.
+
+// 배열 예시
+let veggies = ['양파', '파슬리', '당근'];
+
+console.log(veggies.length); // 배열 길이 출력: 3
+console.log(veggies[0]); // 첫 번째 항목 출력: 양파
+console.log(veggies[1]); // 두 번째 항목 출력: 파슬리
+
+// for 루프를 사용하여 배열의 모든 항목을 출력
+for (let i = 0; i < veggies.length; i++) {
+    console.log(veggies[i]); // 양파, 파슬리, 당근이 차례로 출력됨
+}
+
+// 문자열 예시
+let greeting = "howdy";
+
+console.log(greeting.length); // 문자열 길이 출력: 5
+console.log(greeting[0]); // 첫 번째 문자 출력: H
+console.log(greeting[1]); // 두 번째 문자 출력: O
+
+// for 루프를 사용하여 문자열의 모든 문자를 출력
+for (let i = 0; i < greeting.length; i++) {
+    console.log(greeting[i]); // h, o, w, d, y가 차례로 출력됨
+}
+
+// 문자열이 배열이 아니므로 배열 메서드는 작동하지 않음
+try {
+    console.log(greeting.pop()); // TypeError 발생
+} catch (error) {
+    console.log(error.message); // 에러 메시지 출력
+}
+
+// 문자열 조작 예시
+let greet = "Hello";
+let user = "Lisa";
+
+console.log(greet + " " + user); // + 연산자를 사용한 문자열 연결: Hello Lisa
+console.log(greet.concat(" ", user)); // concat 메서드를 사용한 문자열 연결: Hello Lisa
+
+let text = "Hello, World!";
+
+// charAt() - 문자열에서 지정된 위치의 문자를 반환합니다.
+console.log(text.charAt(0)); // 출력: H
+
+// concat() - 두 개 이상의 문자열을 연결합니다.
+console.log(text.concat(" Have a nice day!")); // 출력: Hello, World! Have a nice day!
+
+// indexOf() - 문자열 내에서 지정된 값이 처음으로 나타나는 위치를 반환합니다.
+console.log(text.indexOf('o')); // 출력: 4
+
+// lastIndexOf() - 문자열 내에서 지정된 값이 마지막으로 나타나는 위치를 반환합니다.
+console.log(text.lastIndexOf('o')); // 출력: 8
+
+// split() - 문자열을 배열로 분할합니다. 여기서는 쉼표와 공백을 기준으로 분할합니다.
+console.log(text.split(", ")); // 출력: ['Hello', 'World!']
+
+// toUpperCase() - 문자열의 모든 문자를 대문자로 변환합니다.
+console.log(text.toUpperCase()); // 출력: HELLO, WORLD!
+
+// toLowerCase() - 문자열의 모든 문자를 소문자로 변환합니다.
+console.log(text.toLowerCase()); // 출력: hello, world!
+
+이미지에 포함된 내용을 바탕으로 JavaScript에서 객체 메서드에 대해 설명하겠습니다.
+
+객체는 키-값 쌍의 집합으로, 이러한 키-값 쌍을 속성이라고 합니다. 객체에 새로운 속성을 추가하거나 기존 속성의 값을 갱신할 때는 점 표기법을 사용할 수 있습니다. 또한, 객체에는 데이터뿐만 아니라 함수를 포함할 수도 있으며, 이러한 함수를 메서드라고 부릅니다.
+
+예를 들어, `car`라는 빈 객체를 생성하고, 여기에 `color` 속성과 `turnKey` 메서드를 추가한 다음, `color` 속성의 값을 'red'로 설정할 수 있습니다.
+
+```javascript
+var car = {};
+car.color = 'red'; // car 객체의 color 속성 값을 'red'로 갱신
+
+// car 객체에 turnKey 메서드를 추가하여 엔진을 시작하는 기능 구현
+car.turnKey = function() {
+  console.log('The engine is running');
+};
+```
+
+이렇게 객체에 메서드를 추가하고 나면, `car.turnKey()` 형식으로 해당 메서드를 호출할 수 있습니다.
+
+생성자 함수를 사용하여 `car` 객체를 생성하고 속성을 추가하는 예제도 있습니다.
+
+```javascript
+var car = {};
+car.mileage = 98765;
+car.color = 'red';
+
+console.log(car); // {mileage: 98765, color: 'red'}
+```
+
+메서드 `turnKey`를 호출하고, `lightsOn`이라는 새 메서드를 추가하여 라이트를 켜는 기능을 구현할 수 있습니다.
+
+```javascript
+car.turnKey = function() {
+  console.log('The engine is running');
+};
+
+car.lightsOn = function() {
+  console.log('The lights are on.');
+};
+
+// 메서드 실행
+car.turnKey(); // 콘솔에 'The engine is running'이 출력됨
+car.lightsOn(); // 콘솔에 'The lights are on.'이 출력됨
+```
+
+var test = typeof("Hello"); // "string"
+console.log(test);
+
+// 숫자에 대한 typeof
+test = typeof(10); // "number"
+console.log(test);
+
+// 소수점 숫자에 대한 typeof
+test = typeof(3.14); // "number"
+console.log(test);
+
+// 불리언 값에 대한 typeof
+test = typeof(true); // "boolean"
+console.log(test);
+test = typeof(false); // "boolean"
+console.log(test);
+
+// 비교 연산에 대한 typeof
+test = typeof(1 < 2); // "boolean"
+console.log(test);
+
+// 배열에 대한 typeof
+test = typeof([1, 2, 3]); // "object"
+console.log(test);
+
+// 객체에 대한 typeof
+test = typeof({}); // "object"
+console.log(test);
+
+// 함수에 대한 typeof
+test = typeof(function() {}); // "function"
+console.log(test);
+typeof연산자는 변수, 표현식의 데이터 유형을 확인할 수 있다. 특히 배열과 객체는 ‘object’ / 함수는 ‘function’으로 출력되는 것에 주목하자
+에러 핸들링, 디버깅
+
+------------------------------------------------------------------------------------------------------------------------
+
+9. 오류/버그 핸들링, 디버깅
+
+오류는 코드 실행을 중단시키는 심각한 문제이며,
+버그는 프로그램이 계속 실행되지만 예상과 다르게 작동하는 것을 의미합니다.
+이 페이지에는 자바스크립트에서 발생할 수 있는 몇 가지 일반적인 오류 유형들이 나열되어 있습니다.
+
+1. **ReferenceError**
+   - 선언되지 않은 변수를 사용하려고 할 때 발생합니다.
+   - 예시: `console.log(username);` // username이 선언되지 않았을 경우
+
+2. **SyntaxError**
+   - 코드가 유효한 JavaScript 구문이 아닐 때 발생합니다.
+   - 예시: `var a = "there's no assignment operator here";`
+
+3. **TypeError**
+   - 잘못된 데이터 유형에 대해 연산을 수행하려고 할 때 발생합니다.
+   - 예시: `"hello".pop();` // 문자열에는 pop 메소드가 없습니다.
+
+4. **RangeError**
+   - 값이 예상 범위를 벗어날 때 발생합니다.
+   - 예시: `(10).toString(2);` // 10을 2진수로 변환, `(10).toString(100);` // 100진수는 존재하지 않아 RangeError 발생
+
+5. **AggregateError**
+   - 여러 오류를 하나의 오류로 묶을 때 발생합니다.
+
+6. **InternalError**
+   - JavaScript 엔진 내부에서 오류가 발생했을 때 사용합니다.
+
+7. **URIError**
+   - encodeURI() 또는 decodeURI()와 같은 글로벌 URI 처리 함수를 잘못 사용했을 때 발생합니다.
+try / catch / throw
+
+이 비디오는 자바스크립트에서 발생하는 오류를 처리하는 방법을 설명합니다. 특히 `try`, `catch`, `throw` 키워드를 사용하여 코드가 오류가 발생해도 중단되지 않도록 하는 방법을 다룹니다. 이 과정은 일반적으로 에러 핸들링이라고 불립니다.
+
+1. **Try와 Catch 사용하기:**
+   - `try` 블록 내부에 오류가 발생할 수 있는 코드를 넣습니다. 만약 오류가 발생하면, `catch` 블록이 그 오류를 잡아서 처리합니다. 예를 들어, 콘솔에 오류 메시지를 출력할 수 있습니다.
+
+2. **Throw 키워드:**
+   - `throw` 키워드를 사용하여 의도적으로 오류를 발생시킬 수 있습니다. `throw`로 생성된 오류는 `try` 블록에서 `catch` 블록으로 전달됩니다. `try` 블록 외부에서 `throw`를 사용하면 오류는 잡히지 않습니다.
+
+3. **Catch 블록의 오류 객체:**
+   - `catch` 블록은 오류 객체를 매개변수로 받습니다. 이 오류 객체는 `try` 블록에서 발생하고 던져진 실제 오류입니다. 일반적으로 이 매개변수를 'err' 또는 'error'라고 짧고 의미 있게 명명합니다.
+
+아래는 JavaScript에서 `try`, `catch`, `throw`를 사용하는 간단한 코드 예시입니다.
+
+```javascript
+try {
+  // 오류가 발생할 수 있는 코드
+  console.log(a + b); // a와 b는 선언되지 않았습니다.
+} catch (err) {
+  // 오류를 처리하는 코드
+  console.log("오류가 발생했습니다: ", err.message);
+  // "오류가 발생했습니다: a is not defined" 출력됩니다.
+}
+
+// 의도적으로 오류를 발생시키는 예시
+try {
+  throw new ReferenceError("이것은 참조 오류입니다!");
+} catch (err) {
+  console.log("잡힌 오류: ", err.message);
+  // "잡힌 오류: 이것은 참조 오류입니다!" 출력됩니다.
+}
+
+console.log("내 프로그램은 멈추지 않습니다.");
+```
+/* throw new Error(); 는 즉시 오류를 발생시킨다 */
+
+try, catch, throw를 사용하는 주된 이유는 예기치 못한 오류를 효과적으로 관리하고, 오류가 발생했을 때 프로그램이 즉시 중단되는 것을 방지하여 프로그램의 안정성을 높이기 위함.
+
+모든 프로그램을 처음부터 완벽하게 오류 없이 만드는 것은 불가능에 가깝다.
+
+undefined, null, empty values
+
+자바스크립트에서 `undefined`, `null`, 그리고 빈 값들은 각각 고유한 의미와 사용 상황을 가지고 있습니다.
+
+`null`은 어떤 객체 값의 의도적인 부재를 나타냅니다. 이는 자바스크립트 내장 메소드의 일부에서 반환 값으로도 사용됩니다. 예를 들어, 문자열에서 특정 문자를 찾으려 할 때, 해당 문자가 없으면 메소드는 `null`을 반환하여 객체가 없음을 나타냅니다.
+
+`undefined`는 아직 명확하게 정의되지 않아 값을 할당할 수 없는 경우에 사용합니다. 변수가 선언되었으나 아직 값이 할당되지 않았거나, 함수에서 반환 값이 지정되지 않았을 때 기본적으로 `undefined`가 할당됩니다. 또한, 객체의 존재하지 않는 속성에 접근하려고 할 때도 `undefined`가 반환됩니다.
+빈 문자열은 문자가 전혀 포함되지 않은 문자열을 의미하며, 단일 또는 이중 인용부호로 표현될 수 있습니다. 이는 문자열 데이터 타입이 값이 없음을 표현할 때 사용됩니다.
+
+이 세 가지 값은 자바스크립트에서 "값이 있어야 할 자리"를 표시할 때 중요한 역할을 하며, 프로그램의 특정 부분에서 값의 부재나 기대되는 값이 아직 할당되지 않았음을 나타내는 데 사용됩니다.
+
