@@ -1,0 +1,98 @@
+1. JavaScript 데이터 유형
+
+데이터 유형(Data types)은 String, Number, Boolean, null, undefined, BigInt, Symbol 의 총 7가지로, 적절한 상황에 맞게 사용한다. 프로그래밍 관점에서 숫자와 텍스트를 구분하는 것은 중요하다.
+
+왜냐하면 서로 다른 규칙을 따르기 때문인데, 숫자를 만들려면 숫자 값을 그냥 입력하면 되지만 문자열은 단일 또는 이중부호로 묶어야 하기 때문이다.
+
+2. JavaScript 연산자
+
+연산자(Operators) 는 개별 데이터 항목을 조작하고 결과를 반환하는 데 사용된다.
+
+할당 연산자는 사칙연산에 사용된다 (+,-,/,*)
+
+비교 연산자는 숫자비교나 true,false값을 도출하는 데 사용된다(>,<,==,!=,===)
+
+논리 연산자는 양쪽 모두 참, 한쪽만 참, 모두 거짓 등을 도출하는 데 사용된다(&&, \\, !)
+
+a ) 이중 별표(**)를 통해 지수 계산을 할 수 있다 [10 ** 2 = 100]
+a ) %만으로 나머지만 뽑아낼 수 있다 9%8 = 1 , 16%8 = 0
+
+문자열은 좌->우로 인식되므로 “” ‘’ ``를 적절히 배합해 자유로운 문자열을 생성할 수 있게끔 해야한다
+
+불리언에서 ==는 느슨하게 검증하고 ===는 데이터 타입까지 검증한다
+
+1 != 1
+false
+
+1 !== “1”
+true
+
+3. JavaScript 조건문
+
+`if else`는 이진 선택이 있는 경우에 더 적합하며, 간단한 조건에서 사용하기 좋다.
+
+반면, 가능한 결과가 많을 때는 `switch` 구문을 사용하는 것이 더 가독성이 높고, 코드를 따라가기 쉽다.
+
+그러나 이것은 절대적인 규칙은 아니며, 주로 스타일 선택의 문제이다.
+
+예를 들어, 신호등 색상에 따라 다른 동작을 하는 코드는 `if else` 또는 `switch`로 표현할 수 있으며, 많은 조건이 있는 경우 `switch`가 더 적합할 수 있다.
+
+//converting the previous if-else example with switch-case
+switch(light) {
+   case 'green':
+       console.log("Drive");
+       break;
+   case 'orange':
+       console.log("Get ready");
+       break;
+   case 'red':
+       console.log("Don't drive");
+       break;
+   default:
+       //this block will run if no condition matches
+       console.log('The light is not green, orange, or red');
+       break;
+}
+
+동일한 작업을 여러 번 반복해야 할 때는 루프를 사용해야 한다. 이때 중요한 것은 카운터 변수이며, 이 변수를 사용하여 루프의 시작과 종료를 제어한다.
+
+항상 카운터 값을 업데이트하여 무한 루프를 피하도록 주의해야 한다.
+
+for 루프
+
+for (var i = 1; i <=3; i ++) {
+	console.log(i)
+}
+console.log(‘go’)
+
+while 루프
+
+변수를 지정한다
+var counter = 3;
+
+while (counter > 0) {
+	console.log(counter);
+	counter = counter – 1;
+}
+
+counter가 0이 될 때까지[true값을 반환할 때까지] 1씩 뺀다
+
+Nested 루프
+
+중첩 루프는 자바스크립트에서 여러 작업을 동시에 수행할 때 유용하지만 리소스를 많이 사용한다. 간단한 변수 이름 사용은 코드를 간결하게 유지하는 표준 관행이다.
+
+for (var i = 1; i <= 3; i++) { // 외부 루프: 행을 위한 루프
+    for (var j = 1; j <= 3; j++) { // 내부 루프: 열을 위한 루프
+        console.log('행 ' + i + ', 열 ' + j); // 각 셀의 좌표 출력
+    }
+}
+
+행 1, 열 1
+행 1, 열 2
+행 1, 열 3
+행 2, 열 1
+행 2, 열 2
+행 2, 열 3
+행 3, 열 1
+행 3, 열 2
+행 3, 열 3
