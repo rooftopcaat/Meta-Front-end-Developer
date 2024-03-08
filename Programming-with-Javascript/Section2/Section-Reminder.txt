@@ -8,4 +8,70 @@ Math 객체에서 파이 값을 가져오는 예시를 보자.
 let {PI} = Math;
 PI; // 3.141592653589793
 
+2. for-in 루프와 for-of 루프
 
+for-in 반복문은 객체와 그 프로토타입의 모든 속성을 순회하는 반면, for-of 반복문(적절한 메서드와 함께 사용될 때)은 객체의 자체 속성만 순회한다.
+
+// Task 1
+
+var dairy = ['cheese', 'sour cream', 'milk', 'yogurt', 'ice cream', 'milkshake']
+
+function logDairy(diary) {
+    for (const item of dairy) {
+        console.log(item);
+    }
+}
+
+dairy의 모든 요소를 순회한다
+
+console.log(logDairy());
+
+// Task 2
+
+const animal = {
+
+canJump: true
+
+};
+
+const bird = Object.create(animal);
+
+bird.canFly = true;
+
+bird.hasFeathers = true;
+
+function birdCan() {
+    for (const [key, value] of Object.entries(bird)) {
+        console.log(`${key}: ${value}`);
+    }
+}
+
+bird의 키-값쌍만 순회한다.
+
+birdCan();
+
+// Task 3
+
+function animalCan() {
+    for (const prop in bird) {
+        console.log(`${prop}: ${bird[prop]}`);
+    }
+}
+
+bird 객체의 모든 속성과 프로토타입의 속성을 순회한다.
+
+animalCan();
+
+3. 데이터 구조
+
+첫째, **객체(Object)**는 키-값 쌍으로 이루어진 구조로, 특정 값을 키로 접근할 때 유용하다. 객체는 주로 객체지향 프로그래밍에서 많이 쓰인다.
+
+둘째, **배열(Array)**은 값의 순서가 있는 목록이다. 배열을 사용하면 관련 데이터를 하나의 라벨 아래 그룹화해서 관리하기 쉽다. 예를 들어 학생들의 시험 점수를 배열에 넣어두면, 평균을 구하는 것처럼 각 값에 쉽게 접근할 수 있다.
+
+셋째, **맵(Map)**은 키-값 쌍으로 이루어져 있지만, 배열과 비슷하게 반복 가능함. 맵의 키는 어떤 값이든 될 수 있어서 더 다양한 사용이 가능하다. 객체와는 달리, 맵에서는 키로 문자열이나 심볼 뿐만 아니라 다양한 타입의 값을 사용할 수 있다.
+
+마지막으로, **셋(Set)**은 유니크한 값들의 집합이다. 즉, 중복된 값이 없어야 함. 셋에 중복된 값을 추가하려고 해도, 셋은 그 값을 무시하고 아무런 오류도 발생시키지 않는다.
+
+프로그래밍 작업을 할 때, 어떤 자료구조를 사용할지 고민해보자.
+예를 들어 학생들의 시험 점수 평균을 구하는 작업이라면, 점수들을 배열에 저장하고, 그 배열을 반복하면서 총합을 구한 다음에, 배열의 길이로 나누어 평균을 구하는 식으로 접근할 수 있다.
+데이터를 어떻게 구조화하고 표현하는지에 따라 코드 작성 방법이 달라진다는 걸 기억하자.
