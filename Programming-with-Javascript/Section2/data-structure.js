@@ -24,3 +24,19 @@ veggies.forEach( function(veggie, index) {
 });
 
 // filter() 메서드는 특정 테스트를 기반으로 배열을 필터링한다.
+
+const nums = [0, 10, 20, 30, 40, 50];
+nums.filter( function(num) {
+    return num > 20;
+})
+
+// 반환값 : [30, 40, 50]
+
+// map()메서드는  매핑에 매개변수로 전달된 함수 내부에서 수행되는 작업에 따라 각 배열 항목을 다른 배열의 항목에 매핑하는 데 사용된다.
+
+    [0,10,20,30,40,50].map( function(num) {
+    return num / 10
+})
+
+// 반환값 : [0, 1, 2, 3, 4, 5]
+

@@ -24,9 +24,9 @@ Graduates gain exclusive access to the Meta Career Programs Job Board. This plat
 ## Certificates
 
 1. [Introduction to Front-End Development](https://coursera.org/share/b79ba831134bbef23c36768ca071b9d4)
-2. [Certificate or Course Title]
-3. [Certificate or Course Title]
-4. [Certificate or Course Title]
+2. [Programming With JavaScript]()
+3. [React Basics]()
+4. [Version Control]()
 5. [Certificate or Course Title]
 6. [Certificate or Course Title]
 7. [Certificate or Course Title]
@@ -44,11 +44,11 @@ Graduates gain exclusive access to the Meta Career Programs Job Board. This plat
 [Short description or link to project]
 
 ---
-## Meta Back End Developer :
+## IBM Back End Developer :
 
 [Short description or link to project]
 
 ---
-## Meta Back End Developer Capstone :
+## IBM Back End Developer Capstone :
 
 [Short description or link to project]
