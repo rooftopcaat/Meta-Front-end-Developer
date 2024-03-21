@@ -38,5 +38,44 @@ nums.filter( function(num) {
     return num / 10
 })
 
+
 // 반환값 : [0, 1, 2, 3, 4, 5]
 
+// 객체로 작업하기
+
+const result = [];
+const drone = {
+    speed: 100,
+    color: 'yellow'
+}
+
+const droneKeys = Object.keys(drone);
+droneKeys.forEach( function(key) {
+    result.push(drone[key]);
+});
+console.log(result);
+
+
+let bestBoxers = new Map();
+bestBoxers.set(1, "The Champion");
+bestBoxers.set(2, "The Runner-up");
+bestBoxers.set(3, "The third place");
+
+console.log(bestBoxers);
+
+ // Map(3) {1 => 'The Champion', 2 => 'The Runner-up', 3 => 'The third place'}
+
+bestBoxers.get(1);
+
+new Set();
+
+const repetitiveFruits = ['apple', 'pear','apple', 'pear','plum','apple' ];
+const uniqueFruits = new Set(repetitiveFruits);
+console.log(uniqueFruits);
+
+// Set(3) {'apple', 'pear', 'plum'} // 중복된 값이 제거된다.
+
+// JS 기본 데이터 구조 외에도 네이티브가 아닌 사용자 정의 구조를 구축할 수 있다.
+
+// 여기서 다루지 않은 고급 데이터 구조는 다음과 같다 :
+// 큐 , 연결된 목록(단일링크 및 이중링크), 트리, 그래프
