@@ -1,0 +1,46 @@
+# 모듈, 내보내기, 가져오기 (react의 구동원리 기초)
+
+function addTwo(a, b) {
+    console.log(a + b);
+}
+
+1. 기본 내보내기 사용 export default
+
+export default function addTwo(a, b) {
+    console.log(a + b);
+}
+
+function addTwo(a, b) {
+    console.log(a + b);
+}
+
+export default addTwo;
+
+2. 명명된 내보내기 사용 지정된 특정 부분만 내보냄
+
+기본 내보내기는 하나만 가능하지만 명명 내보내기는 원하는 만큼 가능
+
+export function addTwo(a, b) {
+    console.log(a + b);
+}
+
+export function addThree(a, b, c) {
+    console.log(a + b + c);
+}
+
+대체 방법
+
+function addTwo(a, b) {
+    console.log(a + b);
+}
+
+function addThree(a, b, c) {
+    console.log(a + b + c);
+}
+
+export { addTwo, addThree };
+
+3. 가져오기
+
+import addTwo from './addTwo.js';
+
