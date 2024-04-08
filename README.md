@@ -24,7 +24,7 @@ Graduates gain exclusive access to the Meta Career Programs Job Board. This plat
 ## Certificates
 
 1. [Introduction to Front-End Development](https://coursera.org/share/b79ba831134bbef23c36768ca071b9d4)
-2. [Programming With JavaScript]()
+2. [Programming With JavaScript](link-to-certificate)
 3. [Version Control]()
 4. [HTML and CSS in depth]()
 5. [React Basics]()
