@@ -25,13 +25,13 @@ Graduates gain exclusive access to the Meta Career Programs Job Board. This plat
 
 1. [Introduction to Front-End Development](https://coursera.org/share/b79ba831134bbef23c36768ca071b9d4)
 2. [Programming With JavaScript]()
-3. [React Basics]()
-4. [Version Control]()
-5. [Certificate or Course Title]
-6. [Certificate or Course Title]
-7. [Certificate or Course Title]
-8. [Certificate or Course Title]
-9. [Certificate or Course Title]
+3. [Version Control]()
+4. [HTML and CSS in depth]()
+5. [React Basics]()
+6. [Advanced React]()
+7. [Principles of UX/UI Design]()
+8. [Front-End Developer Capstone]()
+9. [Coding Interview Preparation]()
 
 ## Specialization Certificate
 
