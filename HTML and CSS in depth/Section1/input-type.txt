@@ -1,0 +1,13 @@
+## button
+
+<button onclick="alert('Are you sure you want to continue?')"> 
+    <img src="https://yourserver.com/button_img.jpg" alt="Submit the form" height="64" width="64">
+ </button> 
+
+
+## checkbox
+
+<input type="checkbox" id="dog" name="dog" value="Dog">
+<label for="dog">I like dogs</label>
+<input type="checkbox" id="cat" name="cat" value="Cat">
+<label for="cat">I like cats</label>
