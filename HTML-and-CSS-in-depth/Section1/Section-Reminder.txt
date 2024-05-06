@@ -30,4 +30,32 @@
 
 예를 들어, 이메일 주소를 입력받는 폼 필드에서 유효하지 않은 이메일 주소를 입력하면 웹 브라우저가 오류 메시지를 표시하여 데이터를 수정하도록 안내한다.
 
+<input type="text" id="firstName" name="firstName" required> 비워둘 수 없는 필수 입력
+
+<input type="text" id="description" name="description" maxlength="50"> 최대길이 지정
+
+<input type="password" id="password" name="password" minlength="8"> 최소길이 지정
+
+<input type="number" id="quantity" name="quantity" min="1" max="10">
+
+<input type="range" id="volume" name="volume" min="1" max="100">  최소 최대 속성
+
+<input type="file" id="gallery" name="gallery" multiple> 복수(이메일 및 파일 입력 유형)
+
+<input type="tel" id="phone" name="phone" pattern=”^(?:0|\+?44)(?:\d\s?){9,10}$” > 패턴
+
+
 2. **서버 측 검증**은 데이터가 웹 서버로 제출된 후에 오류를 검사한다.
+
+# 클라이언트 사이드 유효성 검사 최대화
+
+CSS 가상 클래스 선택자를 통해 사용자 경험을 개선하고 입력 필드에 제한을 두어 서버 자원 낭비를 막는다.
+
+required = 필드가 빈 상태에서 사용자가 제출 버튼을 클릭하면 요청이 웹 서버로 제출되지 않는다. 
+
+min / maxlength = 길이 제한을 두어 불필요한 제출을 막는다.
+
+invalid = 유효하지 않은 데이터를 강조할 수 있다.
+
+focus = 사용자가 해당 필드에 데이터를 입력중인지를 확인한다.
+
